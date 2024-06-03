@@ -1,11 +1,14 @@
 pipeline {
-    agent any
+    agent { label 'Slave1' }
+    environment {
+                git_url = "https://github.com/jfrogdev/project-examples.git"
+                branch = "master"
+    }
 
     stages {
         stage('Pulling the source code') {
             steps {
-                git url: 'https://github.com/jfrogdev/project-examples.git'
-                git branch: master
+                git crendentialsId: '6dae9102-e918-48f7-b611-74bc7b28552e',branch: "${branch}", url: "${git_url}"
             }
         stage('Build') {
             steps {
@@ -23,5 +26,4 @@ pipeline {
             }
         }
     }
-}
 }
