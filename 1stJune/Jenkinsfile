@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Pulling the source code') {
             steps {
-                git crendentialsId: '6dae9102-e918-48f7-b611-74bc7b28552e',branch: "${branch}", url: "${git_url}"
+                git crendentialsId: 'github-credentials',branch: "${branch}", url: "${git_url}"
             }
         stage('Build') {
             steps {
