@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'Slave1' }
     environment {
-                git_url = "https://github.com/jfrogdev/project-examples.git"
+                git_url = "https://github.com/alps1313/1stJune.git"
                 branch = "master"
     }
 
