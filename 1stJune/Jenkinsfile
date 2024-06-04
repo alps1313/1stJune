@@ -8,8 +8,9 @@ pipeline {
     stages {
         stage('Pulling the source code') {
             steps {
-                git crendentialsId: 'github-credentials',branch: "${branch}", url: "${git_url}"
+                git credentialsId: 'github-credentials',branch: "${branch}", url: "${git_url}"
             }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -26,5 +27,4 @@ pipeline {
             }
         }
     }
-}
 }
